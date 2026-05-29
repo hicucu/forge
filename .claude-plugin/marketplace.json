@@ -6,11 +6,18 @@
   "plugins": [
     {
       "name": "forge",
-      "source": ".",
+      "source": "./",
       "description": "Superpowers 기반 개인 전용 AI 에이전트 시스템. TDD, 체계적 디버깅, 브레인스토밍, 오케스트레이터 파이프라인 포함.",
       "version": "1.0.0",
       "license": "MIT",
-      "keywords": ["skills", "tdd", "debugging", "brainstorming", "planning", "subagent"]
+      "keywords": [
+        "skills",
+        "tdd",
+        "debugging",
+        "brainstorming",
+        "planning",
+        "subagent"
+      ]
     }
   ]
 }
