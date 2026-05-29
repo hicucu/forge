@@ -1,0 +1,33 @@
+{
+  "author": {
+    "name": "hicuc"
+  },
+  "description": "Superpowers 기반 개인 전용 AI 에이전트 skills/hooks 모음. TDD, 체계적 디버깅, 브레인스토밍, 구현 계획, 서브에이전트 개발 워크플로우 포함.",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "brainstorming",
+    "planning",
+    "code-review",
+    "subagent",
+    "worktree"
+  ],
+  "license": "MIT",
+  "name": "forge",
+  "version": "1.0.0",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start",
+            "async": false
+          }
+        ]
+      }
+    ]
+  }
+}
