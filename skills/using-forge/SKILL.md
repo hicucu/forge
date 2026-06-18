@@ -128,7 +128,7 @@ Phase별 실행 상세:
 | 1     | `brainstorming-agent`                  | 요구사항 + project-context.md | `_workspaces/{branch-slug}/design.md` → 사용자 승인       |
 | 2     | `planning-agent`                       | design.md                     | `_workspaces/{branch-slug}/specs/` + `file-manifest.json` |
 | 3     | `developer-agent` × N                  | spec 파일 (그룹별 병렬)       | 코드 + 커밋 (TDD) + `HANDOFF.md` (spec/phase 완료 시) |
-| 4     | `review-agent`                         | 브랜치 diff                   | `_workspaces/{branch-slug}/review-report.md`              |
+| 4     | `review-agent`                         | 브랜치 diff                   | `_workspaces/review-{branch-slug}/review-report.md`              |
 | 5     | `finishing-a-development-branch` skill | —                             | merge/PR/유지/폐기                                 |
 
 ### 부분 재실행
