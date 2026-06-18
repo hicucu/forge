@@ -1,5 +1,4 @@
 ---
-name: mirabell:set-hooks
 description: hooks/ 디렉토리의 훅들을 전역 ~/.claude/hooks/ 에 복사하고 ~/.claude/settings.json 에 등록하는 설치 에이전트
 ---
 

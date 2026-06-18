@@ -2,7 +2,7 @@
 
 **기준 버전**: TypeScript 5.9.x (`~5.9.3` 고정)
 **strict 모드**: 필수 (협상 불가)
-**대상 프로젝트**: `mirabell-web-mono` (pnpm 10 + Turborepo 모노레포)
+**대상 프로젝트**: `web-mono` (pnpm 10 + Turborepo 모노레포)
 
 > 모던 안정화 버전 사용. TypeScript는 패치만 자동 수용(`~5.9.3`), minor 업그레이드는 PR로 검증 후 반영.
 
@@ -111,8 +111,8 @@ try {
 | ------------- | ------------------------------- | ----------------------------------------------------------- |
 | 패키지 매니저 | **pnpm 10** (`only-allow pnpm`) | npm/yarn 사용 차단 (`preinstall` 훅)                        |
 | 모노레포      | **Turborepo 2.7**               | `turbo run build/dev` 캐시·병렬                             |
-| 린터          | **ESLint 9 flat config**        | `eslint.config.js`, 공유 `@mirabell-web-mono/eslint-config` |
-| 포매터        | **Prettier 3.5**                | 공유 `@mirabell-web-mono/prettier-config`                   |
+| 린터          | **ESLint 9 flat config**        | `eslint.config.js`, 공유 `@web-mono/eslint-config` |
+| 포매터        | **Prettier 3.5**                | 공유 `@web-mono/prettier-config`                   |
 | 타입체크      | `tsc --noEmit` (`pnpm type`)    | 별도 `tsconfig.typecheck.json`                              |
 
 ### ESLint vs Biome 선택 기준
@@ -132,7 +132,7 @@ try {
 
 ## 6. 모듈 / Import
 
-- **상대경로 import 지양** — `no-relative-import-paths` 경고. `tsconfig` `paths` alias 또는 workspace 패키지명(`@mirabell-web-mono/*`) 사용
+- **상대경로 import 지양** — `no-relative-import-paths` 경고. `tsconfig` `paths` alias 또는 workspace 패키지명(`@web-mono/*`) 사용
 - `import type { X }` 명시 (`verbatimModuleSyntax`로 강제) — 런타임 import와 타입 import 분리
 - workspace 의존은 `workspace:*` 프로토콜로 선언
 

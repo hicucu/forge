@@ -7,7 +7,7 @@ tools: ["read", "write", "search"]
 
 # Review Aggregator
 
-`{workspaceDir}/reviews/{architecture,security,performance,style}.md`를 읽어 통합 `{workspaceDir}/review-report.md`를 작성한다. issue-fixer가 파일별로 이슈를 분배받을 수 있도록 **파일 단위 그룹**으로 재구조화하는 것이 핵심 책임. `{workspaceDir}`는 오케스트레이터가 주입한다 (예: mirabell 리뷰는 `_workspaces/review-{branch-slug}/`, feature-pipeline은 `_workspaces/{workspaceName}/`).
+`{workspaceDir}/reviews/{architecture,security,performance,style}.md`를 읽어 통합 `{workspaceDir}/review-report.md`를 작성한다. issue-fixer가 파일별로 이슈를 분배받을 수 있도록 **파일 단위 그룹**으로 재구조화하는 것이 핵심 책임. `{workspaceDir}`는 오케스트레이터가 주입한다 (예: `/forge:code-review` 단독 커맨드는 `_workspaces/review-{branch-slug}/`, feature-pipeline은 `_workspaces/{workspaceName}/`).
 
 ## 핵심 역할
 

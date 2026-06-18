@@ -8,7 +8,7 @@
 | 프로젝트            | 스택                                                       | 비고                                                           |
 | ------------------- | ---------------------------------------------------------- | -------------------------------------------------------------- |
 | `MDWidgetServer`    | .NET 8 / C# (WPF 호스트 + HttpListener API + Dapper/MySQL) | 중앙 패키지 관리, DbUp 마이그레이션, 3계층(Api/Core/Data)      |
-| `mirabell-web-mono` | pnpm + turbo 모노레포 / React 19 + TS 5.9 + Vite 7         | FSD 구조(entities/features/widgets/shared), ESLint flat config |
+| `web-mono` | pnpm + turbo 모노레포 / React 19 + TS 5.9 + Vite 7         | FSD 구조(entities/features/widgets/shared), ESLint flat config |
 
 ---
 
@@ -17,7 +17,7 @@
 1. **모던 프레임워크 최신 안정화 버전 사용** — 신규 작업·의존성 추가 시 LTS 또는 최신 stable 채택. 보안 패치가 포함된 패치 버전을 우선 적용하고, 알려진 CVE가 있는 버전 고정 금지.
 2. **React 프레임워크 선택 기준**
    - **SSR/SEO/메타데이터/서버 렌더링 필요** → **Next.js**(App Router) 기본
-   - **SPA·사내 도구·위젯·관리자 화면 등 SSR 불필요** → **Vite** 기본 (현 `mirabell-web-mono` 전 앱이 Vite 7 사용)
+   - **SPA·사내 도구·위젯·관리자 화면 등 SSR 불필요** → **Vite** 기본 (현 `web-mono` 전 앱이 Vite 7 사용)
    - 조건이 명확히 다르면 앱별로 다른 프레임워크 허용 (모노레포 내 혼용 가능)
 3. **C# 는 .NET (Core 계열) 기반** — `net8.0`(현재) 이상. .NET Framework 4.x 레거시 신규 도입 금지. UI 호스트가 WPF여도 타깃은 `net8.0-windows`로 유지.
 4. **실무 업계 표준 스펙 일괄 설치** — 신규 프로젝트/패키지는 Linter + Formatter + pre-commit hook + commit 규칙 검증을 처음부터 구성 (§5, §10 참조).
@@ -42,7 +42,7 @@
 ### DRY / KISS / YAGNI
 
 - **DRY**: 중복 로직은 추출. 단, 우연한 중복(서로 다른 이유로 같은 코드)까지 묶지 말 것 — 과도한 추상화는 KISS 위반.
-- **KISS**: `mirabell-web-mono`의 `consistent-type-assertions: never` 규칙처럼 단순·명시적 코드 우선. 임의 캐스팅보다 가드/검증 함수.
+- **KISS**: `web-mono`의 `consistent-type-assertions: never` 규칙처럼 단순·명시적 코드 우선. 임의 캐스팅보다 가드/검증 함수.
 - **YAGNI**: "나중에 쓸지도" 코드 작성 금지. 요청 범위 외 기능 추가 금지.
 
 ### 관심사 분리 (SoC) & 함수 크기
@@ -61,7 +61,7 @@
 
 ### 프론트엔드 — FSD (Feature-Sliced Design)
 
-`mirabell-web-mono`는 FSD를 채택했다. 레이어 의존 방향을 **상위→하위 단방향**으로 강제한다 (`dependency-cruiser`로 검증).
+`web-mono`는 FSD를 채택했다. 레이어 의존 방향을 **상위→하위 단방향**으로 강제한다 (`dependency-cruiser`로 검증).
 
 ```
 app  →  widgets  →  features  →  entities  →  shared
@@ -76,7 +76,7 @@ app  →  widgets  →  features  →  entities  →  shared
 | `widgets`  | `packages/core/widgets`                   | 조합 UI 블록                     |
 | `app`      | `apps/*` (MIMS, web-sender, dynamic-link) | 진입점·라우팅·조립               |
 
-- **상대경로 import 금지** (`no-relative-import-paths`): 슬라이스 경계는 `@mirabell-web-mono/*` 별칭으로 import. 같은 폴더만 상대경로 허용.
+- **상대경로 import 금지** (`no-relative-import-paths`): 슬라이스 경계는 `@web-mono/*` 별칭으로 import. 같은 폴더만 상대경로 허용.
 - 신규 코드는 올바른 레이어에 배치. `dep:check`(`depcruise`)로 위반 차단.
 
 ### 모듈 응집도·결합도
@@ -144,16 +144,16 @@ app  →  widgets  →  features  →  entities  →  shared
 
 **TypeScript + ESLint + Prettier 필수.** (팀 합의 시 ESLint+Prettier를 **Biome**로 대체 가능 — 단일 도구로 lint+format 통합)
 
-현 `mirabell-web-mono` 구성 (그대로 따른다):
+현 `web-mono` 구성 (그대로 따른다):
 
-- **ESLint flat config** (`eslint.config.js`, ESLint 9). 공유 설정 `@mirabell-web-mono/eslint-config` 패키지로 중앙화.
+- **ESLint flat config** (`eslint.config.js`, ESLint 9). 공유 설정 `@web-mono/eslint-config` 패키지로 중앙화.
   - `@typescript-eslint/no-explicit-any`: **error** (any 금지)
   - `@typescript-eslint/no-unused-vars`: `_` 접두사 예외
   - `naming-convention`: 인터페이스 `I` 접두사 금지, 타입 PascalCase
   - `no-console`: warn (`warn`/`error`만 허용)
   - `consistent-type-assertions`: 객체 리터럴 캐스팅(`as`) 금지 → 가드 함수 유도
   - `no-relative-import-paths`: 슬라이스 경계 상대경로 금지 (FSD 강제)
-- **Prettier** 공유 설정 `@mirabell-web-mono/prettier-config`. `format` 스크립트로 일괄 적용.
+- **Prettier** 공유 설정 `@web-mono/prettier-config`. `format` 스크립트로 일괄 적용.
 - **TypeScript strict** 권장. `tsc --noEmit`(`type` 스크립트)로 타입 게이트.
 
 ### C# / .NET (실무 표준)
@@ -325,7 +325,7 @@ logger.error({ err, orderId }, "주문 처리 실패");
 
 ## 부록 — 프로젝트별 빠른 참조
 
-| 항목          | `mirabell-web-mono`                        | `MDWidgetServer`                           |
+| 항목          | `web-mono`                        | `MDWidgetServer`                           |
 | ------------- | ------------------------------------------ | ------------------------------------------ |
 | 패키지 매니저 | pnpm 10 (`only-allow pnpm` 강제)           | NuGet (중앙 버전 관리)                     |
 | 빌드/태스크   | turbo                                      | dotnet / MSBuild                           |

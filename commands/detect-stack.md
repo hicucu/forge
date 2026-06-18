@@ -1,5 +1,4 @@
 ---
-name: mirabell:detect-stack
 description: 프로젝트 마커 파일을 스캔하여 기술 스택을 자동 감지하고 stack-profile.json을 생성하는 단독 커맨드. feature-pipeline 파이프라인 없이 스택 정보만 필요할 때 사용.
 model: opus
 ---
@@ -12,11 +11,11 @@ feature-pipeline의 Phase 1.0 로직만 추출한 단독 실행 커맨드.
 ## 사용법
 
 ```
-/mirabell:detect-stack                          현재 디렉토리 감지, _workspaces/stack-profile.json 작성
-/mirabell:detect-stack <경로>                   지정 경로 감지, <경로>/_workspaces/stack-profile.json 작성
-/mirabell:detect-stack --inline                 파일 작성 없이 결과 출력만
-/mirabell:detect-stack <경로> --inline          지정 경로 감지, 출력만
-/mirabell:detect-stack --out <파일>             출력 경로 직접 지정 (CWD 기준 상대)
+/forge:detect-stack                          현재 디렉토리 감지, _workspaces/stack-profile.json 작성
+/forge:detect-stack <경로>                   지정 경로 감지, <경로>/_workspaces/stack-profile.json 작성
+/forge:detect-stack --inline                 파일 작성 없이 결과 출력만
+/forge:detect-stack <경로> --inline          지정 경로 감지, 출력만
+/forge:detect-stack --out <파일>             출력 경로 직접 지정 (CWD 기준 상대)
 ```
 
 ## 실행 절차
@@ -84,9 +83,9 @@ fallbackUsed    : false
 ```
 스택 감지 실패 — 마커 파일을 식별할 수 없습니다.
 다음 중 하나를 확인하세요:
-  1. 대상 디렉토리가 맞는지: /mirabell:detect-stack <올바른 경로>
+  1. 대상 디렉토리가 맞는지: /forge:detect-stack <올바른 경로>
   2. 마커 파일이 비표준 위치에 있는지
-  3. 스택을 직접 명시: /mirabell:detect-stack --primary node --subtype express
+  3. 스택을 직접 명시: /forge:detect-stack --primary node --subtype express
 ```
 
 ## 인수 처리 우선순위
@@ -99,8 +98,8 @@ fallbackUsed    : false
 여러 인수 동시 사용 예시:
 
 ```
-/mirabell:detect-stack ./services/api --out ./services/api/_workspaces/profile.json
-/mirabell:detect-stack . --primary python --subtype fastapi --out ./_workspaces/manual-profile.json
+/forge:detect-stack ./services/api --out ./services/api/_workspaces/profile.json
+/forge:detect-stack . --primary python --subtype fastapi --out ./_workspaces/manual-profile.json
 ```
 
 ## 활용 예시
@@ -108,7 +107,7 @@ fallbackUsed    : false
 ### 예시 1: 빠른 확인
 
 ```
-/mirabell:detect-stack
+/forge:detect-stack
 ```
 
 → 현재 디렉토리 스캔, 결과만 콘솔에 표시 (`_workspaces/stack-profile.json`도 생성). 다른 작업으로 넘어가기 전 프로젝트 스택을 빠르게 파악.
@@ -116,7 +115,7 @@ fallbackUsed    : false
 ### 예시 2: 다른 도구의 입력으로 사용
 
 ```
-/mirabell:detect-stack . --out ./.cache/stack.json
+/forge:detect-stack . --out ./.cache/stack.json
 ```
 
 → 빌드 스크립트·CI·다른 에이전트가 참조할 수 있는 위치에 저장.
@@ -124,7 +123,7 @@ fallbackUsed    : false
 ### 예시 3: feature-pipeline 사전 검증
 
 ```
-/mirabell:detect-stack
+/forge:detect-stack
 # 결과 확인 후
 /feature-pipeline 기능 요청...
 ```

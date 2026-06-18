@@ -4,7 +4,7 @@
 > 공통 부트스트랩(lint/format/commitlint/husky·tsconfig·모노레포)은 `PROJECT_SETUP_GUIDE.md`, 코딩 규칙은 `LANGUAGE_GUIDELINES_REACT.md` / `LANGUAGE_GUIDELINES_TYPESCRIPT.md` 참조. 이 문서는 **Next.js App Router 스택 구성 전용**.
 >
 > 순수 CSR/SPA(SSR 불필요)는 이 문서 대신 `PROJECT_SETUP_REACT.md`(Vite) 참조.
-> 공유 lint/format/tsconfig·TanStack Query·Zod 패턴은 사내 참조 프로젝트 `mirabell-web-mono`와 일관성을 맞춘다.
+> 공유 lint/format/tsconfig·TanStack Query·Zod 패턴은 사내 참조 프로젝트 `web-mono`와 일관성을 맞춘다.
 
 ---
 

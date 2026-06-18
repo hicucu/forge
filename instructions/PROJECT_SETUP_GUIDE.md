@@ -106,7 +106,7 @@ SSR / SEO 필요한가?
 **코드 리뷰 기준 (공통)**
 
 - 모든 변경은 **리뷰 후 머지** — main/develop 직접 푸시 금지
-- 리뷰 관점: 아키텍처·보안·성능·스타일 (세부는 `DEVELOPMENT.md` / `/mirabell:code-review`)
+- 리뷰 관점: 아키텍처·보안·성능·스타일 (세부는 `DEVELOPMENT.md` / `/forge:code-review`)
 - 자동 검증(lint/test)을 통과한 변경만 리뷰 대상으로 인정 (증명 없는 완료 금지)
 
 > 구체적 도구(lint·format·hook·CI 설정)는 언어별 세부 파일(§7) 참조.

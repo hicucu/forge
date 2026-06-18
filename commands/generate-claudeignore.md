@@ -1,5 +1,4 @@
 ---
-name: mirabell:generate-claudeignore
 description: 프로젝트를 분석하여 기술 스택과 실제 존재하는 파일/디렉토리를 기반으로 최적화된 .claudeignore를 생성하거나 기존 파일에 누락 항목을 병합
 argument-hint: "[경로] [check|reset] (기본값: 현재 디렉토리, 기존 파일은 병합 모드)"
 ---

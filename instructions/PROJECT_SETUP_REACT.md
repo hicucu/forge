@@ -3,7 +3,7 @@
 > Vite 기반 React SPA(Single Page Application) 신규 프로젝트 셋업 단계별 지침.
 > 공통 부트스트랩(lint/format/commitlint/husky·tsconfig·모노레포)은 `PROJECT_SETUP_GUIDE.md`, 코딩 규칙은 `LANGUAGE_GUIDELINES_REACT.md` / `LANGUAGE_GUIDELINES_TYPESCRIPT.md` 참조. 이 문서는 **SPA 스택 선택·구성 전용**.
 >
-> 실제 패턴은 사내 참조 프로젝트 `mirabell-web-mono`(React 19 + Vite 7 + react-router 7 + TanStack Query 5 + Zod 4 + Tailwind 4 + PrimeReact 11)를 분석·반영했다.
+> 실제 패턴은 사내 참조 프로젝트 `web-mono`(React 19 + Vite 7 + react-router 7 + TanStack Query 5 + Zod 4 + Tailwind 4 + PrimeReact 11)를 분석·반영했다.
 
 ---
 
@@ -385,7 +385,7 @@ my-spa/
 
 ### 7.4 모노레포 시 FSD 패키지 분리 (참조 프로젝트)
 
-> 참조 `mirabell-web-mono`는 FSD 레이어를 **워크스페이스 패키지**로 분리하여 여러 앱이 공유한다.
+> 참조 `web-mono`는 FSD 레이어를 **워크스페이스 패키지**로 분리하여 여러 앱이 공유한다.
 
 ```
 packages/core/

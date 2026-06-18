@@ -1,5 +1,4 @@
 ---
-name: mirabell:session-manager
 description: 로컬 Claude Code 세션 전체를 최대 10개 서브에이전트로 병렬 분석하여 목록 조회·이름 변경·삭제를 수행하는 세션 관리 커맨드
 model: haiku
 ---
@@ -26,7 +25,7 @@ model: haiku
 - `/session-manager delete 1 3 5-8 12` — 혼합
 - `/session-manager delete 교환이 5번보다 적은 세션` — 조건 기반
 - `/session-manager delete 2주 이상 된 세션` — 날짜 조건
-- `/session-manager delete mirabell 프로젝트 세션` — 프로젝트 조건
+- `/session-manager delete web-mono 프로젝트 세션` — 프로젝트 조건
 
 ---
 
@@ -192,7 +191,7 @@ Bash 도구만 사용하세요. 읽기·grep·파이프 명령은 모두 자동 
      세션 관리 커맨드 제작. 병렬 서브에이전트로 JSONL 분석 및
      목록·삭제·이름 변경 기능 구현.
 
-  2  2026-05-13  2026-05-13      18   mirabell-web-mono  "로그인 개선"
+  2  2026-05-13  2026-05-13      18   web-mono  "로그인 개선"
      React 로그인 컴포넌트 리팩터링 및 useAuth 훅 분리.
 
   3  2026-05-12  2026-05-12       4   docs

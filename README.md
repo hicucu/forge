@@ -67,7 +67,7 @@ hicucu/forge/
 │   └── session-start      # using-forge 컨텍스트 주입 스크립트
 ├── skills/                # 20개 스킬 디렉토리
 ├── agents/                # 20개 서브에이전트 (project-context + docs-suite 10 + feature-pipeline 9)
-├── commands/              # 슬래시 커맨드 (forge·setup·codex-setup, mirabell 및 mirabell/ 하위 9개)
+├── commands/              # 슬래시 커맨드 (forge·setup·codex-setup·commands 카탈로그 + 세부 커맨드 9개)
 └── instructions/          # 13개 재사용 지침 문서 (개발 원칙·언어 가이드·프로젝트 셋업)
 ```
 

@@ -4,7 +4,7 @@
 > 패키지 매니저 → TypeScript → 린트/포매팅 → pre-commit → 환경변수 → 모노레포 구조 → 설정 스니펫 순서.
 > 코딩 규칙 자체는 `LANGUAGE_GUIDELINES_TYPESCRIPT.md`, AI 동작은 `AI_BEHAVIOR.md`, 커밋은 `COMMIT_CONVENTION.md` 참조 (이 문서는 **부트스트랩 전용**).
 >
-> **참조 프로젝트** (실제 설정값 반영): `mirabell-web-mono` — pnpm 10 + Turborepo 모노레포, TypeScript 5.9, ESLint 9 flat config, 공유 config 패키지 3종.
+> **참조 프로젝트** (실제 설정값 반영): `web-mono` — pnpm 10 + Turborepo 모노레포, TypeScript 5.9, ESLint 9 flat config, 공유 config 패키지 3종.
 
 ---
 
@@ -43,7 +43,7 @@
 
 ```
 모노레포인가?
-├─ Yes → pnpm workspace + Turborepo (참조 mirabell-web-mono 채택)
+├─ Yes → pnpm workspace + Turborepo (참조 web-mono 채택)
 └─ No ─ 단일 패키지
         ├─ 팀 표준이 npm → npm
         └─ 그 외 신규 → pnpm (디스크·속도 이점)

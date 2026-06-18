@@ -1,5 +1,4 @@
 ---
-name: mirabell:code-review
 description: 변경 브랜치를 4개 전문 에이전트(Architecture/Security/Performance/Style)가 병렬로 검토 후 통합 리포트를 작성하는 단독 커맨드. feature-pipeline의 Phase 4만 단독 실행. "코드 리뷰", "변경 검토", "리뷰해줘", "review", "PR 리뷰", "이 변경사항 봐줘" 같은 요청에 사용. 자연어로도 트리거 가능.
 model: opus
 ---
@@ -12,11 +11,11 @@ feature-pipeline의 Phase 4와 동일한 자산을 사용하여 단독 실행한
 ## 사용법
 
 ```
-/mirabell:code-review                              현재 브랜치를 자동 감지된 base 브랜치와 비교
-/mirabell:code-review <base-branch>                base 브랜치 명시 (예: main, master, develop)
-/mirabell:code-review <base>...<head>              명시적 범위 지정
-/mirabell:code-review --files <file>...            특정 파일들만 리뷰 (diff 대신)
-/mirabell:code-review --out <경로>                 출력 경로 지정 (기본: _workspaces/review-{branch-slug}/review-report.md)
+/forge:code-review                              현재 브랜치를 자동 감지된 base 브랜치와 비교
+/forge:code-review <base-branch>                base 브랜치 명시 (예: main, master, develop)
+/forge:code-review <base>...<head>              명시적 범위 지정
+/forge:code-review --files <file>...            특정 파일들만 리뷰 (diff 대신)
+/forge:code-review --out <경로>                 출력 경로 지정 (기본: _workspaces/review-{branch-slug}/review-report.md)
 ```
 
 자연어 트리거 예시:
@@ -51,7 +50,7 @@ git diff <base>...HEAD                  # 전체 diff (에이전트에 전달)
 
 기존 동일 디렉토리가 있으면 `_workspaces/review-{branch-slug}_prev/`로 백업.
 
-stack-profile.json이 없으면 `/mirabell:detect-stack`을 먼저 실행 권장 (또는 인라인 추론으로 진행).
+stack-profile.json이 없으면 `/forge:detect-stack`을 먼저 실행 권장 (또는 인라인 추론으로 진행).
 
 ### Step 3: 4개 전문 reviewer 병렬 실행
 
@@ -141,7 +140,7 @@ diff에 신규 테이블·엔티티·스키마 생성이 포함된 경우, secur
 ### 예시 1: PR 올리기 전 리뷰
 
 ```
-/mirabell:code-review main
+/forge:code-review main
 ```
 
 → main과 비교하여 Critical/High 이슈 즉시 파악. PR 디스크립션에 요약 첨부 가능.
@@ -149,14 +148,14 @@ diff에 신규 테이블·엔티티·스키마 생성이 포함된 경우, secur
 ### 예시 2: 특정 파일만 검토
 
 ```
-/mirabell:code-review --files src/api/UserController.ts src/services/userService.ts
+/forge:code-review --files src/api/UserController.ts src/services/userService.ts
 ```
 
 → diff 없이 두 파일 전체를 4-전문 관점으로 검토.
 
 ### 예시 3: feature-pipeline 일부로 사용
 
-`/feature-pipeline` 실행 중 Phase 4가 자동으로 동일한 4-전문 + aggregator를 호출. 단독 `/mirabell:code-review`는 동일 동작을 파이프라인 외에서 실행.
+`/feature-pipeline` 실행 중 Phase 4가 자동으로 동일한 4-전문 + aggregator를 호출. 단독 `/forge:code-review`는 동일 동작을 파이프라인 외에서 실행.
 
 ## 에러 핸들링
 

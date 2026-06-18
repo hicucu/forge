@@ -3,7 +3,7 @@
 **기준 버전**: React 19.2.x (`react` / `react-dom` 19.2)
 **빌드 도구**: Vite 7 + `@vitejs/plugin-react-swc` (기본)
 **라우팅**: react-router 7 / react-router-dom 7
-**대상 프로젝트**: `mirabell-web-mono` (apps/MIMS, web-sender 등)
+**대상 프로젝트**: `web-mono` (apps/MIMS, web-sender 등)
 
 > 함수형 컴포넌트 + Hooks 기본. 클래스 컴포넌트 금지.
 

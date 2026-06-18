@@ -140,7 +140,7 @@ depends-on: none | spec-a | spec-b
 
 ## Phase 4: 완료
 
-1. `mirabell:code-review` 실행 (전체 브랜치 대상)
+1. `forge:code-review` 실행 (전체 브랜치 대상)
 2. 리뷰 이슈 수정
 3. PR 생성 (모든 스펙 커밋 포함)
 4. `_workspaces/{branch-slug}/` 디렉토리 삭제 (기능 완료 정리):
