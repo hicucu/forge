@@ -71,10 +71,10 @@ Phase 1 실행 순서:
 설계 문서 저장 직후:
 
 ```bash
-git checkout -b feature/{slug}
+git checkout -b feature/{branch-slug}
 ```
 
-실패 시 (이미 존재): `git checkout feature/{slug}` 로 전환.
+실패 시 (이미 존재): `git checkout feature/{branch-slug}` 로 전환.
 
 ## Phase 2: 계획
 

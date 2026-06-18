@@ -138,13 +138,13 @@ Phase 3 (순차)
     출력: 단위테스트 파일
          ↓
 Phase 4a (4개 병렬, run_in_background: true)
-├── architecture-reviewer.md  → _workspaces/review-{branch}/reviews/architecture.md
-├── security-reviewer.md      → _workspaces/review-{branch}/reviews/security.md
-├── performance-reviewer.md   → _workspaces/review-{branch}/reviews/performance.md
-└── style-reviewer.md         → _workspaces/review-{branch}/reviews/style.md
+├── architecture-reviewer.md  → _workspaces/review-{branch-slug}/reviews/architecture.md
+├── security-reviewer.md      → _workspaces/review-{branch-slug}/reviews/security.md
+├── performance-reviewer.md   → _workspaces/review-{branch-slug}/reviews/performance.md
+└── style-reviewer.md         → _workspaces/review-{branch-slug}/reviews/style.md
          ↓
 Phase 4b (순차)
-└── review-aggregator.md      → _workspaces/review-{branch}/review-report.md
+└── review-aggregator.md      → _workspaces/review-{branch-slug}/review-report.md
          ↓ 사용자 확인 게이트
 Phase 5 (파일별 병렬, run_in_background: true)
 └── issue-fixer.md × M

@@ -19,7 +19,7 @@ tools: ["read", "write", "search", "bash"]
 
 ## 작업 원칙
 
-1. **작업 디렉토리 먼저 결정**: 요구사항에서 3~4단어 kebab-case 슬러그를 추출하여 `workspaceDir = _workspaces/{slug}` 결정. 모든 산출물을 이 디렉토리에 저장. `_workspaces/` 루트 직접 저장 금지
+1. **작업 디렉토리 먼저 결정**: 요구사항에서 3~4단어 kebab-case 슬러그를 추출하여 `workspaceDir = _workspaces/{branch-slug}` 결정. 모든 산출물을 이 디렉토리에 저장. `_workspaces/` 루트 직접 저장 금지
 2. **마커 기반 스택 감지**: 추측 금지. 마커 파일과 dependencies 시그널만 사용
 3. **탐색 우선**: 구현 전 관련 파일을 반드시 먼저 읽고 기존 패턴 파악
 4. **비즈니스 로직 분리**: UI/뷰 계층과 로직(서비스·유틸·도메인) 분리하여 설계

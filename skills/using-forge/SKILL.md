@@ -125,10 +125,10 @@ Phase별 실행 상세:
 | Phase | 에이전트                               | 입력                          | 출력                                               |
 | ----- | -------------------------------------- | ----------------------------- | -------------------------------------------------- |
 | 0     | `project-context-agent`                | 프로젝트 루트                 | `_workspaces/project-context.md` (24h 캐시)        |
-| 1     | `brainstorming-agent`                  | 요구사항 + project-context.md | `_workspaces/{slug}/design.md` → 사용자 승인       |
-| 2     | `planning-agent`                       | design.md                     | `_workspaces/{slug}/specs/` + `file-manifest.json` |
+| 1     | `brainstorming-agent`                  | 요구사항 + project-context.md | `_workspaces/{branch-slug}/design.md` → 사용자 승인       |
+| 2     | `planning-agent`                       | design.md                     | `_workspaces/{branch-slug}/specs/` + `file-manifest.json` |
 | 3     | `developer-agent` × N                  | spec 파일 (그룹별 병렬)       | 코드 + 커밋 (TDD) + `HANDOFF.md` (spec/phase 완료 시) |
-| 4     | `review-agent`                         | 브랜치 diff                   | `_workspaces/{slug}/review-report.md`              |
+| 4     | `review-agent`                         | 브랜치 diff                   | `_workspaces/{branch-slug}/review-report.md`              |
 | 5     | `finishing-a-development-branch` skill | —                             | merge/PR/유지/폐기                                 |
 
 ### 부분 재실행
@@ -157,7 +157,7 @@ Phase별 실행 상세:
 | "이어서", "계속"  | pipeline-state.md 확인 → 미완료 Phase부터                        |
 | "리뷰부터 다시"   | Phase 4부터 재시작                                               |
 | "설계 다시"       | Phase 1부터 재시작                                               |
-| "새 요구사항으로" | 기존 `_workspaces/{slug}/`를 `{slug}_prev/`로 백업 → 전체 재시작 |
+| "새 요구사항으로" | 기존 `_workspaces/{branch-slug}/`를 `{branch-slug}_prev/`로 백업 → 전체 재시작 |
 
 ### 병렬 개발 그룹화
 

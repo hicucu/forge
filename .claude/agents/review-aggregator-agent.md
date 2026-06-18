@@ -7,12 +7,12 @@ model: opus
 
 # Review Aggregator Agent
 
-`_workspaces/{slug}/reviews/` 하위 4개 리뷰 파일을 읽어 통합 `review-report.md`를 작성한다.
+`_workspaces/{branch-slug}/reviews/` 하위 4개 리뷰 파일을 읽어 통합 `review-report.md`를 작성한다.
 
 ## 입력 프로토콜
 
-- `reviews-dir`: `_workspaces/{slug}/reviews/` 경로
-- `output-path`: `_workspaces/{slug}/review-report.md`
+- `reviews-dir`: `_workspaces/{branch-slug}/reviews/` 경로
+- `output-path`: `_workspaces/{branch-slug}/review-report.md`
 - `branch`: 리뷰 대상 브랜치
 - `base`: 기준 브랜치
 

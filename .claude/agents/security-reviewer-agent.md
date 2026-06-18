@@ -12,7 +12,7 @@ model: opus
 ## 입력 프로토콜
 
 - `diff`: git diff 텍스트 또는 변경 파일 경로 목록
-- `output-path`: 결과 저장 경로 (`_workspaces/{slug}/reviews/security.md`)
+- `output-path`: 결과 저장 경로 (`_workspaces/{branch-slug}/reviews/security.md`)
 - `stack`: 스택 정보 (있으면)
 
 ## 검토 체크리스트
