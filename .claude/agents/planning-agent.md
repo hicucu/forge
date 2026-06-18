@@ -35,6 +35,8 @@ tools: Read, Write, Glob, Grep, Bash
 
 파일명: `spec-a.md`, `spec-b.md`, ... (의존 순서 반영)
 
+**Phase 그룹 (선택):** 한 스펙의 태스크가 많고 자연스러운 마일스톤이 있으면, 태스크들을 `## Phase N: [이름]` 헤더로 묶을 수 있다. 각 Phase 헤더 아래에 `- [ ] **Phase N 완료**` 체크박스를 둔다. 작은 스펙은 Phase 없이 태스크만 나열. 새 고정 계층을 강제하지 않으며 마일스톤이 뚜렷할 때만 사용한다. 이 Phase 단위는 구현 시 developer-agent의 HANDOFF 갱신 트리거가 된다.
+
 ### Step 3: 스펙 파일 작성
 
 각 `_workspaces/{branch-slug}/specs/spec-{x}.md`:
