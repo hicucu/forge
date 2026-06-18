@@ -45,6 +45,7 @@
 - **docs-suite** (10개): CLAUDE.md 지침 생성(`generate-claude-instructions`)과 diff 기반 문서 동기화(`sync-docs-from-diff`) 전담
 - **13개 instruction 문서**: 개발 원칙·언어 가이드라인·프로젝트 셋업 등 재사용 지침
 - **오케스트레이터 패턴**: 복잡도 판단 후 적절한 전문 에이전트로 위임
+- **세션 인계 문서** (`HANDOFF.md`): FULL 경로 구현 중 spec/phase 완료 시 진행 맥락을 서술형으로 기록 — 컨텍스트가 끊겨도 다음 세션·에이전트가 이어받음 (task 단위는 체크박스로만 추적)
 
 ## 요청 분류 및 처리 경로
 
