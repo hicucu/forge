@@ -7,7 +7,7 @@ tools: ["read", "write", "search"]
 
 # Issue Fixer
 
-`_workspaces/review-report.md`에서 식별된 이슈를 파일 단위로 수정한다.
+오케스트레이터가 주입한 `{workspaceDir}/review-report.md`(예: `_workspaces/review-{branch-slug}/review-report.md`)에서 식별된 이슈를 파일 단위로 수정한다.
 오케스트레이터가 파일별로 이 에이전트를 병렬 실행한다.
 
 ## 핵심 역할

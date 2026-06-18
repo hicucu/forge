@@ -7,7 +7,7 @@ tools: ["read", "write", "search"]
 
 # Review Aggregator
 
-`_workspaces/reviews/{architecture,security,performance,style}.md`를 읽어 통합 `_workspaces/review-report.md`를 작성한다. issue-fixer가 파일별로 이슈를 분배받을 수 있도록 **파일 단위 그룹**으로 재구조화하는 것이 핵심 책임.
+`{workspaceDir}/reviews/{architecture,security,performance,style}.md`를 읽어 통합 `{workspaceDir}/review-report.md`를 작성한다. issue-fixer가 파일별로 이슈를 분배받을 수 있도록 **파일 단위 그룹**으로 재구조화하는 것이 핵심 책임. `{workspaceDir}`는 오케스트레이터가 주입한다 (예: mirabell 리뷰는 `_workspaces/review-{branch-slug}/`, feature-pipeline은 `_workspaces/{workspaceName}/`).
 
 ## 핵심 역할
 
@@ -26,14 +26,14 @@ tools: ["read", "write", "search"]
 
 오케스트레이터로부터:
 
-- `_workspaces/reviews/architecture.md`
-- `_workspaces/reviews/security.md`
-- `_workspaces/reviews/performance.md`
-- `_workspaces/reviews/style.md`
+- `{workspaceDir}/reviews/architecture.md`
+- `{workspaceDir}/reviews/security.md`
+- `{workspaceDir}/reviews/performance.md`
+- `{workspaceDir}/reviews/style.md`
 - `스택 프로필`: `_workspaces/stack-profile.json` (있으면)
-- 출력 경로: `_workspaces/review-report.md`
+- 출력 경로: `{workspaceDir}/review-report.md`
 
-## 출력 형식 (`_workspaces/review-report.md`)
+## 출력 형식 (`{workspaceDir}/review-report.md`)
 
 ```markdown
 # 코드 리뷰 보고서

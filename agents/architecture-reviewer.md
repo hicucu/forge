@@ -30,7 +30,7 @@ tools: ["read", "write", "search"]
   - git diff 텍스트 (단독 실행 시)
   - 변경 파일 경로 목록 (feature-pipeline Phase 4)
 - `스택 프로필`: `_workspaces/stack-profile.json` 경로 (있으면)
-- `출력 경로`: 산출 마크다운 경로 (예: `_workspaces/reviews/architecture.md`)
+- `출력 경로`: 산출 마크다운 경로 (예: `{workspaceDir}/reviews/architecture.md`, {workspaceDir}는 오케스트레이터 주입)
 
 ## 검토 체크리스트
 
