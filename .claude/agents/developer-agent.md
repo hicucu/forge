@@ -79,10 +79,39 @@ BLOCKING: {구현할 수 없는 이유}
 - [ ] 스펙에 없는 코드 추가 없음 (YAGNI)
 - [ ] 기존 테스트 회귀 없음
 
-### Step 5: 커밋
+### Step 5: HANDOFF 갱신 (복잡 경로 전용)
+
+`_workspaces/{branch-slug}/HANDOFF.md`는 세션 인계 전용 문서다. 이 spec 구현을 완료했으므로 갱신한다:
+
+- HANDOFF.md가 없으면 표준 템플릿으로 **먼저 생성** 후 채운다 (별도 초기 생성 단계 없음).
+- **본문**(`## 지금까지` / `## 현재 진행 중` / `## 다음 이어받을 일` / `## 주의·막힌 점·가정`)을 최신 상태로 덮어쓴다.
+- **인계 로그**에 `{YYYY-MM-DD} {spec-x} 완료` 1줄을 맨 위에 추가하고, 로그는 **최근 5개만** 유지한다.
+- 스펙에 Phase 그룹이 있으면 각 phase 완료 시에도 같은 방식으로 갱신한다 (로그에 `{spec-x}/Phase n 완료`).
+- **task 단위로는 갱신하지 않는다** — 체크박스가 task를 추적한다.
+
+표준 템플릿:
+
+```markdown
+# HANDOFF: {branch-slug}
+
+**갱신:** {YYYY-MM-DD} · **현재 위치:** {spec-x / Phase n}
+
+## 지금까지 (무엇을·왜)
+## 현재 진행 중
+## 다음 이어받을 일
+## 주의·막힌 점·가정
+## 참조
+- design.md · specs/ · pipeline-state.md
+
+---
+## 인계 로그 (최근 5개, 최신 위)
+- {YYYY-MM-DD} {spec-x} 완료
+```
+
+### Step 6: 커밋
 
 ```bash
-git add {변경 파일 목록}
+git add {변경 파일 목록} _workspaces/{branch-slug}/HANDOFF.md
 git commit -m "feat: {스펙 제목}"
 ```
 
@@ -127,3 +156,5 @@ ATTEMPTED: {시도한 것}
 - 스펙 범위 밖 리팩터링
 - main/master 브랜치에서 직접 구현
 - 추측으로 구현 (모호하면 NEEDS_CONTEXT 반환)
+- spec/phase 완료 후 HANDOFF.md 갱신 누락
+- task 완료마다 HANDOFF.md 갱신 (체크박스가 task 추적 — 과잉 금지)
