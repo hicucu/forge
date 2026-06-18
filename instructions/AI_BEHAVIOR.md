@@ -244,9 +244,9 @@
 
 ### 5.7 중간 산출물 경로 규칙
 
-- `_workspace/` 루트에 직접 저장 금지
-- 반드시 `_workspace/{작업명}/` 하위에 저장
-- **예시**: `_workspace/feature-login/plan.md`, `_workspace/review-auth/review-report.md`
+- `_workspaces/` 루트에 직접 저장 금지
+- 반드시 `_workspaces/{작업명}/` 하위에 저장
+- **예시**: `_workspaces/feature-login/plan.md`, `_workspaces/review-auth/review-report.md`
 - **이유**: 여러 병렬 작업 간 산출물 충돌 방지, 정리 용이
 
 ---

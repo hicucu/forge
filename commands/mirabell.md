@@ -21,7 +21,7 @@ description: mirabell 하네스 커맨드 목록 표시 및 진입점. /mirabell
 | 커맨드                            | 역할                                                                    |
 | --------------------------------- | ----------------------------------------------------------------------- |
 | `/mirabell:code-review`           | 4-전문 병렬 코드 리뷰 (Architecture/Security/Performance/Style)         |
-| `/mirabell:detect-stack`          | 프로젝트 스택 감지 → `_workspace/stack-profile.json`                    |
+| `/mirabell:detect-stack`          | 프로젝트 스택 감지 → `_workspaces/stack-profile.json`                    |
 | `/mirabell:git-resume`            | 과거 commit 기반 작업 맥락 복원                                         |
 | `/mirabell:setup-all`             | 전체 프로젝트 셋업 (graphify-setup + set-hooks + generate-claudeignore) |
 | `/mirabell:graphify-setup`        | 코드 그래프 도구 설치 (graphifyy 또는 codegraph)                        |

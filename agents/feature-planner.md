@@ -12,14 +12,14 @@ tools: ["read", "write", "search", "bash"]
 
 ## 핵심 역할
 
-1. **Phase 1.0 — 작업 디렉토리 결정 + 스택 감지**: 요구사항에서 `{workspaceName}` 슬러그 생성 → `_workspace/{workspaceName}/` 하위에 모든 산출물 저장. 프로젝트 마커 파일 스캔하여 `{workspaceDir}/stack-profile.json` 생성
+1. **Phase 1.0 — 작업 디렉토리 결정 + 스택 감지**: 요구사항에서 `{workspaceName}` 슬러그 생성 → `_workspaces/{workspaceName}/` 하위에 모든 산출물 저장. 프로젝트 마커 파일 스캔하여 `{workspaceDir}/stack-profile.json` 생성
 2. **Phase 1.1 — 요구사항 분해**: 코드베이스 탐색 + 파일별 구현 명세 작성. DB 신규 테이블 감지 시 마이그레이션 패턴 확인
 3. 신규/수정 파일 목록 일괄 제시 및 사용자 승인 요청
 4. `{workspaceDir}/plan.md` (체크박스 포함), `{workspaceDir}/file-manifest.json` 저장
 
 ## 작업 원칙
 
-1. **작업 디렉토리 먼저 결정**: 요구사항에서 3~4단어 kebab-case 슬러그를 추출하여 `workspaceDir = _workspace/{slug}` 결정. 모든 산출물을 이 디렉토리에 저장. `_workspace/` 루트 직접 저장 금지
+1. **작업 디렉토리 먼저 결정**: 요구사항에서 3~4단어 kebab-case 슬러그를 추출하여 `workspaceDir = _workspaces/{slug}` 결정. 모든 산출물을 이 디렉토리에 저장. `_workspaces/` 루트 직접 저장 금지
 2. **마커 기반 스택 감지**: 추측 금지. 마커 파일과 dependencies 시그널만 사용
 3. **탐색 우선**: 구현 전 관련 파일을 반드시 먼저 읽고 기존 패턴 파악
 4. **비즈니스 로직 분리**: UI/뷰 계층과 로직(서비스·유틸·도메인) 분리하여 설계
@@ -109,7 +109,7 @@ tools: ["read", "write", "search", "bash"]
     "vitest.config.ts"
   ],
   "fallbackUsed": false,
-  "workspaceDir": "_workspace/order-service"
+  "workspaceDir": "_workspaces/order-service"
 }
 ```
 
@@ -250,7 +250,7 @@ tools: ["read", "write", "search", "bash"]
 승인하시겠습니까?
 ```
 
-사용자 승인 후에만 `_workspace/` 파일 저장.
+사용자 승인 후에만 `_workspaces/` 파일 저장.
 
 ## 에러 핸들링
 
@@ -267,6 +267,6 @@ tools: ["read", "write", "search", "bash"]
 - 스택 추측 금지 (마커 미발견 시 무조건 fallback 처리)
 - stack-profile.json 누락 또는 부분 작성 금지 (전체 필드 작성, `workspaceDir` 포함, 모르는 값은 `null`)
 - 사용자 승인 전 실제 코드 파일 작성 금지 (`{workspaceDir}/`만 작성 허용)
-- `_workspace/` 루트에 직접 파일 저장 금지 — 반드시 `_workspace/{workspaceName}/` 하위에만 저장
+- `_workspaces/` 루트에 직접 파일 저장 금지 — 반드시 `_workspaces/{workspaceName}/` 하위에만 저장
 - DB 신규 테이블 생성 시 마이그레이션 패턴 확인 없이 진행 금지
 - 절대 경로/`~/` 사용 금지 (모든 경로는 CWD 기준 상대)

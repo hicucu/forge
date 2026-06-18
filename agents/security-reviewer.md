@@ -26,8 +26,8 @@ tools: ["read", "write", "search"]
 오케스트레이터/커맨드로부터:
 
 - `리뷰 대상`: diff 텍스트 또는 변경 파일 경로 목록
-- `스택 프로필`: `_workspace/stack-profile.json` 경로 (있으면)
-- `출력 경로`: 산출 마크다운 경로 (예: `_workspace/reviews/security.md`)
+- `스택 프로필`: `_workspaces/stack-profile.json` 경로 (있으면)
+- `출력 경로`: 산출 마크다운 경로 (예: `_workspaces/reviews/security.md`)
 
 ## 검토 체크리스트
 

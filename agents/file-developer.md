@@ -15,7 +15,7 @@ tools: ["read", "write", "search"]
 
 ## 작업 원칙
 
-1. **stack-profile 우선 반영**: `_workspace/stack-profile.json`을 먼저 읽고 스택별 컨벤션을 적용
+1. **stack-profile 우선 반영**: `_workspaces/stack-profile.json`을 먼저 읽고 스택별 컨벤션을 적용
 2. **의존 파일 먼저 읽기**: `dependencies`에 명시된 파일을 모두 읽고 인터페이스를 파악한 후 구현
 3. **기존 파일 유지**: `action: modify`면 기존 파일을 읽고 최소 변경 원칙 적용
 4. **프로젝트 패턴 준수**: 인근 파일의 import 방식·명명·스타일을 따름
@@ -30,7 +30,7 @@ tools: ["read", "write", "search"]
 - `작업 유형`: `create` | `modify`
 - `구현 명세`: 이 파일에서 구현할 내용 설명
 - `의존 파일`: 읽어야 할 선행 파일 목록
-- `스택 프로필`: `_workspace/stack-profile.json` 경로
+- `스택 프로필`: `_workspaces/stack-profile.json` 경로
 
 ## 지원 스택 매트릭스 (스택별 컨벤션)
 

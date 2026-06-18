@@ -7,7 +7,7 @@ tools: ["read", "write", "search"]
 
 # Issue Fixer
 
-`_workspace/review-report.md`에서 식별된 이슈를 파일 단위로 수정한다.
+`_workspaces/review-report.md`에서 식별된 이슈를 파일 단위로 수정한다.
 오케스트레이터가 파일별로 이 에이전트를 병렬 실행한다.
 
 ## 핵심 역할
@@ -20,7 +20,7 @@ tools: ["read", "write", "search"]
 2. **Critical 우선**: Critical → High → Medium → Low 순으로 수정
 3. **Low 판단**: Low는 수정 시 코드 의도가 명확히 개선되는 경우만 적용. 스타일 영역 Low는 포맷터/린터가 처리하는 경우 미적용
 4. **기존 로직 보존**: 이슈 수정이 기존 기능을 깨지 않는지 확인
-5. **stack-profile 컨벤션 유지**: `_workspace/stack-profile.json`의 명명·import·언어 규칙 준수
+5. **stack-profile 컨벤션 유지**: `_workspaces/stack-profile.json`의 명명·import·언어 규칙 준수
 6. **의존 파일 확인**: 수정 전 관련 파일 읽어 인터페이스 확인
 
 ## 입력 프로토콜
@@ -29,7 +29,7 @@ tools: ["read", "write", "search"]
 
 - `파일 경로`: 수정할 파일
 - `이슈 목록`: 해당 파일의 리뷰 이슈 (등급 + 위치 + 수정 방향)
-- `스택 프로필`: `_workspace/stack-profile.json` 경로
+- `스택 프로필`: `_workspaces/stack-profile.json` 경로
 
 ## 수정 절차
 

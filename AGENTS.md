@@ -80,20 +80,20 @@ Phase 2 (순차)
 ```
 Phase 1 (순차, opus)
 └── change-analyzer.md
-        → _workspace/01_change_analysis.json
-        → _workspace/01_change_analysis.md
+        → _workspaces/01_change_analysis.json
+        → _workspaces/01_change_analysis.md
 
 Phase 2 (병렬, haiku, 파일 수정 없음)
-├── readme-updater.md      → _workspace/proposals/readme/
-├── docs-updater.md        → _workspace/proposals/docs/
-└── inline-doc-updater.md  → _workspace/proposals/inline/
+├── readme-updater.md      → _workspaces/proposals/readme/
+├── docs-updater.md        → _workspaces/proposals/docs/
+└── inline-doc-updater.md  → _workspaces/proposals/inline/
 
 Phase 3 (오케스트레이터 직접 수행 — 에이전트 없음)
     사용자 승인 후 Edit으로 패치 적용
-    → _workspace/03_apply_log.md
+    → _workspaces/03_apply_log.md
 
 Phase 4 (순차, opus)
-└── doc-sync-validator.md  → _workspace/02_validation_report.md
+└── doc-sync-validator.md  → _workspaces/02_validation_report.md
 ```
 
 **에이전트별 입력 계약**:
@@ -125,7 +125,7 @@ Phase 1 (순차)
 └── feature-planner.md
     입력: 사용자 기능 요구사항
     출력: stack-profile.json, plan.md, file-manifest.json
-    위치: _workspace/{workspaceName}/
+    위치: _workspaces/{workspaceName}/
          ↓ 사용자 승인 게이트
 Phase 2 (파일별 병렬, run_in_background: true)
 └── file-developer.md × N
@@ -138,13 +138,13 @@ Phase 3 (순차)
     출력: 단위테스트 파일
          ↓
 Phase 4a (4개 병렬, run_in_background: true)
-├── architecture-reviewer.md  → _workspace/review-{branch}/reviews/architecture.md
-├── security-reviewer.md      → _workspace/review-{branch}/reviews/security.md
-├── performance-reviewer.md   → _workspace/review-{branch}/reviews/performance.md
-└── style-reviewer.md         → _workspace/review-{branch}/reviews/style.md
+├── architecture-reviewer.md  → _workspaces/review-{branch}/reviews/architecture.md
+├── security-reviewer.md      → _workspaces/review-{branch}/reviews/security.md
+├── performance-reviewer.md   → _workspaces/review-{branch}/reviews/performance.md
+└── style-reviewer.md         → _workspaces/review-{branch}/reviews/style.md
          ↓
 Phase 4b (순차)
-└── review-aggregator.md      → _workspace/review-{branch}/review-report.md
+└── review-aggregator.md      → _workspaces/review-{branch}/review-report.md
          ↓ 사용자 확인 게이트
 Phase 5 (파일별 병렬, run_in_background: true)
 └── issue-fixer.md × M
@@ -170,9 +170,9 @@ Phase 5 (파일별 병렬, run_in_background: true)
 
 | 용도             | 경로                               |
 | ---------------- | ---------------------------------- |
-| 기능 개발 산출물 | `_workspace/{workspaceName}/`      |
+| 기능 개발 산출물 | `_workspaces/{workspaceName}/`      |
 | 세션 인계 문서   | `_workspaces/{branch-slug}/HANDOFF.md` |
-| 리뷰 산출물      | `_workspace/review-{branch-slug}/` |
+| 리뷰 산출물      | `_workspaces/review-{branch-slug}/` |
 | 절대 경로 사용   | 금지 (`~/`, `/` 시작 경로)         |
 
 ---

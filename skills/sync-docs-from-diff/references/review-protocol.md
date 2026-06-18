@@ -14,7 +14,7 @@
 
 ## 전제 조건
 
-- Phase 2 완료 — `_workspace/proposals/{inline,readme,docs}/_index.md` 존재
+- Phase 2 완료 — `_workspaces/proposals/{inline,readme,docs}/_index.md` 존재
 - 각 영역에 0개 이상의 `*.patch.md` 파일
 - 사용자가 검토 후 적용 모드를 선택한 상태 (오케스트레이터의 기본 동작)
 
@@ -90,7 +90,7 @@ After:
 
 ## Step 5: apply_log 기록
 
-매 패치 처리 후 `_workspace/03_apply_log.md`에 한 줄 추가:
+매 패치 처리 후 `_workspaces/03_apply_log.md`에 한 줄 추가:
 
 ```markdown
 # Apply Log

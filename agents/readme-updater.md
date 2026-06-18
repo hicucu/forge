@@ -1,6 +1,6 @@
 ---
 name: readme-updater
-description: 프로젝트 루트 README.md를 change-analyzer 분석을 기반으로 업데이트할 필요가 있는지 판단하고, 필요하면 업데이트 제안(diff)을 생성한다. 설치·사용법·기능 목록·CLI 예시·요구사항 같은 사용자 대면 섹션이 변경된 동작과 어긋나는지 검사한다. 실제 파일 수정 없이 _workspace/proposals/readme/에 제안을 저장한다.
+description: 프로젝트 루트 README.md를 change-analyzer 분석을 기반으로 업데이트할 필요가 있는지 판단하고, 필요하면 업데이트 제안(diff)을 생성한다. 설치·사용법·기능 목록·CLI 예시·요구사항 같은 사용자 대면 섹션이 변경된 동작과 어긋나는지 검사한다. 실제 파일 수정 없이 _workspaces/proposals/readme/에 제안을 저장한다.
 model: haiku
 tools: Glob, Grep, Read, Write
 ---

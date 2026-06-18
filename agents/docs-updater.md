@@ -1,6 +1,6 @@
 ---
 name: docs-updater
-description: 프로젝트 루트의 ./docs/ 디렉토리 하위 모든 문서(*.md, *.mdx 등)를 순회하며 change-analyzer 분석에 따라 업데이트할 부분을 식별하고 제안(diff)을 생성한다. 가이드·튜토리얼·API 레퍼런스·아키텍처 문서를 대상으로 하며, 실제 파일 수정 없이 _workspace/proposals/docs/에 제안만 저장한다.
+description: 프로젝트 루트의 ./docs/ 디렉토리 하위 모든 문서(*.md, *.mdx 등)를 순회하며 change-analyzer 분석에 따라 업데이트할 부분을 식별하고 제안(diff)을 생성한다. 가이드·튜토리얼·API 레퍼런스·아키텍처 문서를 대상으로 하며, 실제 파일 수정 없이 _workspaces/proposals/docs/에 제안만 저장한다.
 model: haiku
 tools: Glob, Grep, Read, Write
 ---
@@ -46,7 +46,7 @@ tools: Glob, Grep, Read, Write
 ```markdown
 # docs/ 업데이트 제안 인덱스
 
-- 베이스 분석: \_workspace/01_change_analysis.json
+- 베이스 분석: \_workspaces/01_change_analysis.json
 - docs/ 총 파일 수: 45
 - Grep 후보: 12
 - 패치 생성: 7

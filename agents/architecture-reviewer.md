@@ -29,8 +29,8 @@ tools: ["read", "write", "search"]
 - `리뷰 대상`: 다음 중 하나
   - git diff 텍스트 (단독 실행 시)
   - 변경 파일 경로 목록 (feature-pipeline Phase 4)
-- `스택 프로필`: `_workspace/stack-profile.json` 경로 (있으면)
-- `출력 경로`: 산출 마크다운 경로 (예: `_workspace/reviews/architecture.md`)
+- `스택 프로필`: `_workspaces/stack-profile.json` 경로 (있으면)
+- `출력 경로`: 산출 마크다운 경로 (예: `_workspaces/reviews/architecture.md`)
 
 ## 검토 체크리스트
 

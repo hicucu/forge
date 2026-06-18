@@ -12,8 +12,8 @@ feature-pipeline의 Phase 1.0 로직만 추출한 단독 실행 커맨드.
 ## 사용법
 
 ```
-/mirabell:detect-stack                          현재 디렉토리 감지, _workspace/stack-profile.json 작성
-/mirabell:detect-stack <경로>                   지정 경로 감지, <경로>/_workspace/stack-profile.json 작성
+/mirabell:detect-stack                          현재 디렉토리 감지, _workspaces/stack-profile.json 작성
+/mirabell:detect-stack <경로>                   지정 경로 감지, <경로>/_workspaces/stack-profile.json 작성
 /mirabell:detect-stack --inline                 파일 작성 없이 결과 출력만
 /mirabell:detect-stack <경로> --inline          지정 경로 감지, 출력만
 /mirabell:detect-stack --out <파일>             출력 경로 직접 지정 (CWD 기준 상대)
@@ -25,7 +25,7 @@ feature-pipeline의 Phase 1.0 로직만 추출한 단독 실행 커맨드.
 
 - 첫 인수가 디렉토리 경로면 → 대상 루트로 사용 (기본: CWD)
 - `--inline` 플래그가 있으면 → 파일 작성 안 함, 콘솔 출력만
-- `--out <파일>` 옵션이 있으면 → 해당 경로에 작성 (기본: `<대상>/_workspace/stack-profile.json`)
+- `--out <파일>` 옵션이 있으면 → 해당 경로에 작성 (기본: `<대상>/_workspaces/stack-profile.json`)
 
 ### Step 2: feature-planner의 Phase 1.0 매트릭스 적용
 
@@ -51,7 +51,7 @@ feature-pipeline의 Phase 1.0 로직만 추출한 단독 실행 커맨드.
 
 `--inline` 미지정 시:
 
-- 출력 경로(`<대상>/_workspace/stack-profile.json` 또는 `--out` 지정 경로)에 JSON 작성
+- 출력 경로(`<대상>/_workspaces/stack-profile.json` 또는 `--out` 지정 경로)에 JSON 작성
 - 파일이 이미 존재하면 덮어쓰되, 직전 내용을 `stack-profile.prev.json`으로 백업
 
 `--inline` 지정 시:
@@ -76,7 +76,7 @@ businessLogic   : src/services, src/middleware
 ui              : (없음)
 근거            : package.json:express@4.19.2, tsconfig.json, vitest.config.ts, pnpm-lock.yaml
 fallbackUsed    : false
-산출 파일       : ./_workspace/stack-profile.json
+산출 파일       : ./_workspaces/stack-profile.json
 ```
 
 `fallbackUsed: true`일 때:
@@ -99,8 +99,8 @@ fallbackUsed    : false
 여러 인수 동시 사용 예시:
 
 ```
-/mirabell:detect-stack ./services/api --out ./services/api/_workspace/profile.json
-/mirabell:detect-stack . --primary python --subtype fastapi --out ./_workspace/manual-profile.json
+/mirabell:detect-stack ./services/api --out ./services/api/_workspaces/profile.json
+/mirabell:detect-stack . --primary python --subtype fastapi --out ./_workspaces/manual-profile.json
 ```
 
 ## 활용 예시
@@ -111,7 +111,7 @@ fallbackUsed    : false
 /mirabell:detect-stack
 ```
 
-→ 현재 디렉토리 스캔, 결과만 콘솔에 표시 (`_workspace/stack-profile.json`도 생성). 다른 작업으로 넘어가기 전 프로젝트 스택을 빠르게 파악.
+→ 현재 디렉토리 스캔, 결과만 콘솔에 표시 (`_workspaces/stack-profile.json`도 생성). 다른 작업으로 넘어가기 전 프로젝트 스택을 빠르게 파악.
 
 ### 예시 2: 다른 도구의 입력으로 사용
 

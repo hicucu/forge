@@ -16,7 +16,7 @@ feature-pipeline의 Phase 4와 동일한 자산을 사용하여 단독 실행한
 /mirabell:code-review <base-branch>                base 브랜치 명시 (예: main, master, develop)
 /mirabell:code-review <base>...<head>              명시적 범위 지정
 /mirabell:code-review --files <file>...            특정 파일들만 리뷰 (diff 대신)
-/mirabell:code-review --out <경로>                 출력 경로 지정 (기본: _workspace/review-{branch-slug}/review-report.md)
+/mirabell:code-review --out <경로>                 출력 경로 지정 (기본: _workspaces/review-{branch-slug}/review-report.md)
 ```
 
 자연어 트리거 예시:
@@ -44,12 +44,12 @@ git diff <base>...HEAD                  # 전체 diff (에이전트에 전달)
 
 ### Step 2: 작업 디렉토리 준비
 
-현재 브랜치명에서 kebab-case 슬러그를 생성하여 `{workspaceDir} = _workspace/review-{branch-slug}/` 결정.
-예: 브랜치 `feature/login-api` → `_workspace/review-feature-login-api/`
+현재 브랜치명에서 kebab-case 슬러그를 생성하여 `{workspaceDir} = _workspaces/review-{branch-slug}/` 결정.
+예: 브랜치 `feature/login-api` → `_workspaces/review-feature-login-api/`
 
-> **경로 규칙**: 모든 산출물은 `{workspaceDir}/` 하위에 저장한다. `_workspace/` 루트 직접 저장 금지.
+> **경로 규칙**: 모든 산출물은 `{workspaceDir}/` 하위에 저장한다. `_workspaces/` 루트 직접 저장 금지.
 
-기존 동일 디렉토리가 있으면 `_workspace/review-{branch-slug}_prev/`로 백업.
+기존 동일 디렉토리가 있으면 `_workspaces/review-{branch-slug}_prev/`로 백업.
 
 stack-profile.json이 없으면 `/mirabell:detect-stack`을 먼저 실행 권장 (또는 인라인 추론으로 진행).
 
@@ -165,7 +165,7 @@ diff에 신규 테이블·엔티티·스키마 생성이 포함된 경우, secur
 | base 브랜치 자동 감지 실패   | 사용자에게 base 명시 요청                           |
 | diff 0건                     | "리뷰할 변경사항이 없습니다" 출력 후 종료           |
 | 4개 reviewer 중 1개 실패     | 나머지로 진행, aggregator가 "검토 실패" 표기        |
-| 브랜치명 슬러그 생성 불가    | `_workspace/review-manual/` 사용 후 사용자에게 알림 |
+| 브랜치명 슬러그 생성 불가    | `_workspaces/review-manual/` 사용 후 사용자에게 알림 |
 | stack-profile.json 없음      | 각 reviewer가 diff에서 스택 추론 (없어도 동작)      |
 | 출력 경로 부모 디렉토리 없음 | 자동 생성                                           |
 
@@ -174,7 +174,7 @@ diff에 신규 테이블·엔티티·스키마 생성이 포함된 경우, secur
 - 코드 파일 직접 수정 (리뷰만 작성)
 - plan.md, file-manifest.json 작성 (feature-pipeline 전체 흐름의 산출물)
 - 사용자에게 파일 목록 승인 요청 (이 커맨드는 게이트 없음)
-- `_workspace/` 루트에 직접 저장 — 반드시 `_workspace/review-{branch-slug}/` 하위에만 저장
+- `_workspaces/` 루트에 직접 저장 — 반드시 `_workspaces/review-{branch-slug}/` 하위에만 저장
 - 절대 경로/`~/` 사용
 
 ## 참조

@@ -104,7 +104,7 @@ Claude가 모든 대화에서 일관되게 따라야 할 행동 원칙을 정리
 - 독립 작업은 병렬 호출
 - 의존성 있는 작업은 순차
 - 파괴적 작업(삭제·덮어쓰기·강제 푸시) 전 항상 확인
-- **중간 산출물 경로**: `_workspace/` 루트 직접 저장 금지 — 반드시 `_workspace/{작업명}/` 하위에 저장 (예: `_workspace/feature-login/plan.md`, `_workspace/review-auth/review-report.md`)
+- **중간 산출물 경로**: `_workspaces/` 루트 직접 저장 금지 — 반드시 `_workspaces/{작업명}/` 하위에 저장 (예: `_workspaces/feature-login/plan.md`, `_workspaces/review-auth/review-report.md`)
 
 ### 5-a. 권한 정책 (AI_BEHAVIOR.md §5.5에 반드시 포함)
 

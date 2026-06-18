@@ -102,5 +102,5 @@ tools: Bash, Glob, Grep, Read, Write
 
 ## 재호출 시 행동
 
-- 동일 `_workspace/01_change_analysis.*`이 이미 존재하고 사용자가 "그대로 사용" 또는 별다른 지시 없이 후속 단계만 재실행을 요청한 경우 → 기존 분석 재사용. 단, HEAD SHA가 달라졌으면 재분석.
-- 사용자가 "분석부터 다시"라고 명시하면 기존 파일을 `_workspace_prev/`로 옮기고 새로 작성.
+- 동일 `_workspaces/01_change_analysis.*`이 이미 존재하고 사용자가 "그대로 사용" 또는 별다른 지시 없이 후속 단계만 재실행을 요청한 경우 → 기존 분석 재사용. 단, HEAD SHA가 달라졌으면 재분석.
+- 사용자가 "분석부터 다시"라고 명시하면 기존 파일을 `_workspaces_prev/`로 옮기고 새로 작성.

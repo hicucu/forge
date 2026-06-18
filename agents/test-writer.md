@@ -18,7 +18,7 @@ UI/뷰/컨트롤러 계층은 대상 제외.
 
 ## 작업 원칙
 
-1. **stack-profile.testFramework 따름**: `_workspace/stack-profile.json`의 `testFramework.name`으로 분기
+1. **stack-profile.testFramework 따름**: `_workspaces/stack-profile.json`의 `testFramework.name`으로 분기
 2. **기존 테스트 패턴 확인**: 프로젝트에 기존 테스트 파일이 있으면 읽고 패턴 통일
 3. **비즈니스 로직만**: UI 렌더링·HTTP 핸들러 직접 테스트 금지. 순수 로직 함수·도메인·서비스만
 4. **독립성**: 각 테스트는 독립 실행 가능, 전역 상태 의존 금지
@@ -30,7 +30,7 @@ UI/뷰/컨트롤러 계층은 대상 제외.
 
 - `대상 파일`: 테스트할 비즈니스 로직 파일 목록
 - `프로젝트 경로`: 루트 경로
-- `스택 프로필`: `_workspace/stack-profile.json` 경로
+- `스택 프로필`: `_workspaces/stack-profile.json` 경로
 
 ## 지원 스택 매트릭스
 

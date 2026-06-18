@@ -1,6 +1,6 @@
 ---
 name: inline-doc-updater
-description: 변경된 코드 파일이 위치한 디렉토리와 그 부모 디렉토리에 존재하는 인라인 문서(*.md, README.md 등 루트 README 제외)를 찾아, change-analyzer가 산출한 변경 분석을 기반으로 업데이트 제안(diff)을 생성한다. 실제 파일 수정은 하지 않으며 _workspace/proposals/inline/ 하위에 패치 파일로 저장한다.
+description: 변경된 코드 파일이 위치한 디렉토리와 그 부모 디렉토리에 존재하는 인라인 문서(*.md, README.md 등 루트 README 제외)를 찾아, change-analyzer가 산출한 변경 분석을 기반으로 업데이트 제안(diff)을 생성한다. 실제 파일 수정은 하지 않으며 _workspaces/proposals/inline/ 하위에 패치 파일로 저장한다.
 model: haiku
 tools: Glob, Grep, Read, Write
 ---
@@ -79,7 +79,7 @@ getUser(opts);
 
 ## 재호출 시 행동
 
-- `_workspace/proposals/inline/`이 이미 존재하면 사용자 지시 확인:
+- `_workspaces/proposals/inline/`이 이미 존재하면 사용자 지시 확인:
   - "이 부분만 다시" → 명시된 dir만 재처리, 나머지 패치는 보존
   - 별도 지시 없으면 → 기존 패치를 `proposals/inline_prev/`로 이동 후 전체 재생성
 ```
