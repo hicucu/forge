@@ -31,6 +31,16 @@ description: Use when you have a written implementation plan to execute in a sep
 3. 명시된 검증 수행
 4. completed로 표시
 
+**HANDOFF.md 갱신 (복잡 경로 전용):**
+
+`_workspaces/{branch-slug}/HANDOFF.md`는 세션 인계 전용 문서임. 갱신 시점:
+
+- 작업(task) 완료 → TodoWrite 체크만. HANDOFF 건드리지 않음.
+- phase 완료(스펙에 Phase 그룹이 있을 때) → 본문 갱신 + 인계 로그 1줄.
+- spec 완료 → 본문 갱신 + 인계 로그 1줄, 해당 마일스톤 커밋에 `HANDOFF.md` 포함.
+
+HANDOFF.md가 없으면 첫 갱신 시 표준 템플릿(forge:writing-plans 참조)으로 먼저 생성. 본문은 덮어쓰기, 인계 로그는 최근 5개만 유지. 단순·디버깅 경로에는 만들지 않음.
+
 ### 3단계: 개발 완료
 
 모든 작업 완료 및 검증 후:
