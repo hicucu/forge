@@ -110,6 +110,21 @@ git commit -m "feat: add specific feature"
 ```
 ````
 
+## Phase 그룹 (선택)
+
+작업이 많고 자연스러운 마일스톤이 있는 **큰 스펙에서만**, 작업들을 `## Phase N: [이름]` 헤더로 묶을 수 있음. 각 Phase 헤더 바로 아래에 완료 체크박스를 둠:
+
+```markdown
+## Phase 1: [마일스톤 이름]
+
+- [ ] **Phase 1 완료** (이 그룹의 모든 작업 완료 시 체크)
+
+  ### 작업 1: ...
+  ### 작업 2: ...
+```
+
+작은 스펙은 Phase 없이 작업만 나열. **새 고정 계층을 강제하지 않음** — 마일스톤이 뚜렷할 때만 사용. 현재 구조(spec → 작업 → 단계)는 그대로 유지되며 Phase는 선택적 그룹일 뿐.
+
 ## 플레이스홀더 금지
 
 모든 단계에는 엔지니어가 필요로 하는 실제 내용이 포함되어야 함. 다음은 **플랜 실패** — 절대 작성 금지:
@@ -161,3 +176,31 @@ git commit -m "feat: add specific feature"
 
 - **필수 서브 SKILL:** forge:executing-plans 사용
 - 검토 체크포인트가 있는 배치 실행
+
+## HANDOFF.md — 세션 인계 안내 (실행 주체에게)
+
+복잡 경로에서 컨텍스트가 끊겨도 다음 세션·에이전트가 이어받을 수 있도록, 실행 주체(subagent-driven-development / executing-plans)는 `_workspaces/{branch-slug}/HANDOFF.md`를 유지해야 함. writing-plans는 이 파일을 직접 만들지 않으며, 아래 규약을 실행 주체에 전달함:
+
+- **갱신 트리거**: spec 완료 시 또는 phase 완료 시. **task 완료는 체크박스로만 추적 — HANDOFF를 건드리지 않음.**
+- **없으면 생성**: HANDOFF.md가 없는 상태로 갱신 트리거가 오면 먼저 생성 후 채움.
+- **형식**: 본문은 최신 상태로 덮어쓰기, 하단 인계 로그는 **최근 5개만** 유지.
+- **범위**: 복잡 경로(FULL) 전용. 단순·디버깅 경로에는 만들지 않음.
+
+본문 템플릿:
+
+```markdown
+# HANDOFF: {branch-slug}
+
+**갱신:** {YYYY-MM-DD} · **현재 위치:** {spec-x / Phase n}
+
+## 지금까지 (무엇을·왜)
+## 현재 진행 중
+## 다음 이어받을 일
+## 주의·막힌 점·가정
+## 참조
+- design.md · specs/ · pipeline-state.md
+
+---
+## 인계 로그 (최근 5개, 최신 위)
+- {YYYY-MM-DD} {spec-x} 완료
+```
