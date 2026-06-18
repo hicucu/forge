@@ -99,7 +99,6 @@ forge/
 │   └── sync-docs-from-diff/            # 흡수
 ├── agents/               # 서브에이전트 (20개: project-context + docs-suite 10 + feature-pipeline 9) — AGENTS.md 참조
 ├── commands/             # 슬래시 커맨드 (forge·setup·codex-setup·commands 카탈로그 + 세부 커맨드 9개)
-├── instructions/         # 재사용 지침 문서 (13개: 개발 원칙·언어 가이드·프로젝트 셋업)
 ├── hooks/                # Claude Code hooks
 ├── README.md
 ├── AGENTS.md             # 에이전트 명세

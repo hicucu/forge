@@ -43,7 +43,6 @@
 - **20개 서브에이전트**: project-context, docs-suite(10개), feature-pipeline(9개) — 단계별 전담
 - **멀티에이전트 파이프라인** (`feature-pipeline`): 계획 → 병렬 개발 → 테스트 → 4종 병렬 리뷰 → 이슈 수정의 9개 에이전트 Phase 흐름
 - **docs-suite** (10개): CLAUDE.md 지침 생성(`generate-claude-instructions`)과 diff 기반 문서 동기화(`sync-docs-from-diff`) 전담
-- **13개 instruction 문서**: 개발 원칙·언어 가이드라인·프로젝트 셋업 등 재사용 지침
 - **오케스트레이터 패턴**: 복잡도 판단 후 적절한 전문 에이전트로 위임
 - **세션 인계 문서** (`HANDOFF.md`): FULL 경로 구현 중 spec/phase 완료 시 진행 맥락을 서술형으로 기록 — 컨텍스트가 끊겨도 다음 세션·에이전트가 이어받음 (task 단위는 체크박스로만 추적)
 
@@ -68,8 +67,7 @@ hicucu/forge/
 │   └── session-start      # using-forge 컨텍스트 주입 스크립트
 ├── skills/                # 20개 스킬 디렉토리
 ├── agents/                # 20개 서브에이전트 (project-context + docs-suite 10 + feature-pipeline 9)
-├── commands/              # 슬래시 커맨드 (forge·setup·codex-setup·commands 카탈로그 + 세부 커맨드 9개)
-└── instructions/          # 13개 재사용 지침 문서 (개발 원칙·언어 가이드·프로젝트 셋업)
+└── commands/              # 슬래시 커맨드 (forge·setup·codex-setup·commands 카탈로그 + 세부 커맨드 9개)
 ```
 
 ## 철학
