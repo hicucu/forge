@@ -171,6 +171,7 @@ Phase 5 (파일별 병렬, run_in_background: true)
 | 용도             | 경로                               |
 | ---------------- | ---------------------------------- |
 | 기능 개발 산출물 | `_workspace/{workspaceName}/`      |
+| 세션 인계 문서   | `_workspaces/{branch-slug}/HANDOFF.md` |
 | 리뷰 산출물      | `_workspace/review-{branch-slug}/` |
 | 절대 경로 사용   | 금지 (`~/`, `/` 시작 경로)         |
 
