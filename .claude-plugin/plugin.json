@@ -1,0 +1,19 @@
+{
+  "name": "forge",
+  "version": "2.0.0",
+  "description": "개인 전용 AI 에이전트 시스템 — skills·agents·commands·instructions 통합. TDD·체계적 디버깅·브레인스토밍·구현 계획·서브에이전트 개발·멀티에이전트 파이프라인·문서 동기화 포함.",
+  "author": {
+    "name": "hicucu"
+  },
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "brainstorming",
+    "planning",
+    "code-review",
+    "subagent",
+    "worktree"
+  ]
+}
