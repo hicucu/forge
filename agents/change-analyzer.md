@@ -91,7 +91,7 @@ tools: Bash, Glob, Grep, Read, Write
 
 ## 에러 핸들링
 
-- 베이스 브랜치 없음 → 즉시 stderr로 `ERROR: base branch not found: <name>` 출력 후 비-제로 exit 신호 (실제로는 산출물 파일에 `error` 필드 기록 + return).
+- 베이스 브랜치 없음 → 즉시 stderr로 `ERROR: base branch not found: <name>` 출력 후 0이 아닌 exit 신호 (실제로는 산출물 파일에 `error` 필드 기록 + return).
 - HEAD가 베이스보다 뒤거나 동일 → `commits: []` `files: []`로 정상 출력 (empty 분석). 후속 updater는 이를 보고 "업데이트 불필요"로 종료.
 - diff가 너무 커서(예: 10,000+ lines) 단일 분석이 어려우면, behavioral 추출은 commit 메시지와 변경된 export/함수 시그니처 grep으로 한정. cosmetic 분석은 생략 가능.
 

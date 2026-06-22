@@ -16,7 +16,7 @@ description: Use when about to claim work is complete, fixed, or passing, before
 ## 철칙
 
 ```
-신선한 검증 증거 없이 완료 주장 금지
+최신 검증 증거 없이 완료 주장 금지
 ```
 
 지금 이 메시지에서 검증 명령을 직접 실행하지 않았다면, 통과한다고 주장할 수 없다.
@@ -27,7 +27,7 @@ description: Use when about to claim work is complete, fixed, or passing, before
 어떤 상태를 주장하거나 만족감을 표현하기 전에:
 
 1. 식별: 이 주장을 증명하는 명령어는 무엇인가?
-2. 실행: 전체 명령어를 실행하라 (신선하게, 완전하게)
+2. 실행: 전체 명령어를 실행하라 (새로, 완전하게)
 3. 읽기: 전체 출력을 읽고, 종료 코드를 확인하고, 실패 횟수를 세어라
 4. 검증: 출력이 주장을 확인하는가?
    - 아니오인 경우: 증거와 함께 실제 상태를 기술하라

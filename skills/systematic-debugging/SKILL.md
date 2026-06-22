@@ -11,7 +11,7 @@ description: Use when encountering any bug, test failure, or unexpected behavior
 
 **핵심 원칙:** 수정 시도 전에 항상 근본 원인을 찾을 것. 증상 수정은 실패.
 
-**이 프로세스의 문자를 위반하는 것은 디버깅의 정신을 위반하는 것.**
+**이 프로세스의 형식을 위반하는 것은 디버깅의 정신을 위반하는 것.**
 
 ## 철칙
 
@@ -44,7 +44,7 @@ description: Use when encountering any bug, test failure, or unexpected behavior
 
 - 이슈가 단순해 보일 때 (단순한 버그도 근본 원인이 있음)
 - 급할 때 (서두르면 재작업이 보장됨)
-- 즉시 수정을 원할 때 (체계적 접근이 헛수고보다 빠름)
+- 즉시 수정을 원할 때 (체계적 접근이 무작정 고치는 것보다 빠름)
 
 ## 4단계 프로세스
 

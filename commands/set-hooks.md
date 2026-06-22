@@ -31,9 +31,9 @@ ls hooks/
 
 ```
 오류: hooks/ 디렉토리를 찾을 수 없습니다.
-agent_by_deul 저장소 루트에서 실행해야 합니다.
+forge 저장소 루트에서 실행해야 합니다.
   현재 위치: <CWD>
-  필요 위치: <agent_by_deul 저장소 루트 — hooks/ 폴더가 있어야 함>
+  필요 위치: <forge 저장소 루트 — hooks/ 폴더가 있어야 함>
 ```
 
 ### 0-2. Python 확인

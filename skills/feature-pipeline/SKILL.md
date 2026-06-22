@@ -101,7 +101,7 @@ TDD 필수: forge:test-driven-development 스킬을 사용하여 RED-GREEN-REFAC
 UI/뷰 계층 파일(`uiMarkers` 경로)은 테스트 대상에서 제외. 순수 비즈니스 로직만 대상.
 **Phase 3 완료 후**: `{workspaceDir}/plan.md`의 `- [ ] Phase 3` 항목을 `- [x] Phase 3`로 업데이트.
 
-## Phase 4: 코드 리뷰 (4-전문 병렬 + 통합)
+## Phase 4: 코드 리뷰 (4개 전문 병렬 + 통합)
 
 Phase 2~3에서 생성/수정된 전체 파일 대상. 4개 전문 reviewer를 병렬 실행한 후 aggregator로 통합 보고서 생성.
 
