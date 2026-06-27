@@ -175,6 +175,48 @@ Phase 5 (파일별 병렬, run_in_background: true)
 | 리뷰 산출물      | `_workspaces/review-{branch-slug}/` |
 | 절대 경로 사용   | 금지 (`~/`, `/` 시작 경로)         |
 
+### 산출물 파일 가이드
+
+모든 산출물은 `_workspaces/` 하위에 생성되며 `.gitignore` 대상이다 (저장소에 커밋되지 않는 작업용 문서).
+
+**공용 (브랜치 무관)**
+
+| 파일                 | 생성 주체                      | 역할                                   | 수명     |
+| -------------------- | ------------------------------ | -------------------------------------- | -------- |
+| `project-context.md` | project-context-agent          | 스택·아키텍처·구조 분석                | 24h 캐시 |
+| `stack-profile.json` | detect-stack / feature-planner | 언어·프레임워크·테스트 프레임워크 감지 | 재생성   |
+
+**복잡 경로(FULL) — `{branch-slug}/`**
+
+| 파일                    | 생성 주체                | 역할                                     |
+| ----------------------- | ------------------------ | ---------------------------------------- |
+| `design.md`             | brainstorming            | 검증된 설계 — 사용자 승인 게이트         |
+| `specs/spec-{a,b,…}.md` | writing-plans / planning | TDD 태스크 단위 구현 스펙                |
+| `file-manifest.json`    | planning                 | 파일 단위 작업 + developmentOrder(병렬)  |
+| `pipeline-state.md`     | 오케스트레이터           | Phase 완료 상태 체크박스 — 재개용        |
+| `HANDOFF.md`            | 구현 주체                | spec/phase 완료 시 서술형 인계 맥락      |
+
+**단순·디버깅 경로(SIMPLE·DEBUG) — `{branch-slug}/`**
+
+| 파일      | 생성 주체            | 역할                                  |
+| --------- | -------------------- | ------------------------------------- |
+| `GOAL.md` | 작업자(소프트 게이트) | 목표 + 성공 기준 — 완료 검증 시 대조 |
+
+**리뷰 — `review-{branch-slug}/`**
+
+| 파일               | 생성 주체          | 역할                |
+| ------------------ | ------------------ | ------------------- |
+| `review-report.md` | review-aggregator  | 4종 병렬 리뷰 통합  |
+
+**문서 동기화 (sync-docs-from-diff)**
+
+| 파일                                          | 생성 주체        | 역할                |
+| --------------------------------------------- | ---------------- | ------------------- |
+| `01_change_analysis.json`                     | change-analyzer  | diff 기반 변경 분석 |
+| `proposals/{inline,readme,docs}/*.patch.md`   | 문서 업데이터    | 문서 변경 제안      |
+| `02_validation_report.md`                     | doc-sync-validator | 적용 일관성 검증  |
+| `03_apply_log.md`                             | 오케스트레이터   | 승인·적용 로그      |
+
 ---
 
 ## 에이전트 간 의존성
