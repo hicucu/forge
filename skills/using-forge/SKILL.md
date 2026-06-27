@@ -84,7 +84,7 @@ digraph request_dispatch {
 
 ### 작업 목표 추적 (GOAL.md 소프트 게이트)
 
-SIMPLE·DEBUG 경로 진입 직후, 작업의 목표와 성공 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록합니다. 목표(왜/완료 기준)와 TodoWrite(지금 무엇을)의 역할을 분리합니다.
+SIMPLE·DEBUG 경로 진입 직후, 작업의 목표와 성공 기준(디버깅 경로의 경우 버그 증상·수정 완료 기준)을 `_workspaces/{branch-slug}/GOAL.md`에 기록합니다. 목표(왜/완료 기준)와 TodoWrite(지금 무엇을)의 역할을 분리합니다.
 
 **소프트 게이트**: 작성이 기본 단계이나, 오타·한 줄 수정 등 명백히 사소한 작업은 생략을 허용합니다(착수 자체를 막는 하드 게이트가 아님).
 
@@ -93,7 +93,7 @@ SIMPLE·DEBUG 경로 진입 직후, 작업의 목표와 성공 기준을 `_works
 GOAL.md 포맷:
 
 ```markdown
-# Goal
+# 목표
 <무엇을·왜, 1~3줄>
 
 ## 성공 기준
