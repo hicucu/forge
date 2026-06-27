@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+description: 버그·테스트 실패·예상치 못한 동작을 만났을 때, 수정을 제안하기 전에 사용
 ---
 
 # 체계적 디버깅

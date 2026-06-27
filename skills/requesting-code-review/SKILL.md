@@ -1,6 +1,6 @@
 ---
 name: requesting-code-review
-description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+description: 작업 완료·주요 기능 구현 시 또는 merge 전에 작업이 요구사항을 충족하는지 검증할 때 사용
 ---
 
 # 코드 리뷰 요청

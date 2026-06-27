@@ -1,6 +1,6 @@
 ---
 name: writing-plans
-description: Use when you have a spec or requirements for a multi-step task, before touching code
+description: 여러 단계로 이루어진 작업의 스펙이나 요구사항이 있을 때, 코드를 건드리기 전에 사용
 ---
 
 # 플랜 작성

@@ -1,6 +1,6 @@
 ---
 name: receiving-code-review
-description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
+description: 코드 리뷰 피드백을 받았을 때, 특히 피드백이 불명확하거나 기술적으로 의심스러울 때 제안을 구현하기 전에 사용 - 형식적 동의나 맹목적 구현이 아닌 기술적 엄밀성과 검증을 요구
 ---
 
 # 코드 리뷰 수신

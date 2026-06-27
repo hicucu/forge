@@ -1,6 +1,6 @@
 ---
 name: subagent-driven-development
-description: Use when executing implementation plans with independent tasks in the current session
+description: 독립적인 작업으로 구성된 구현 플랜을 현재 세션에서 실행할 때 사용
 ---
 
 # 서브에이전트 주도 개발

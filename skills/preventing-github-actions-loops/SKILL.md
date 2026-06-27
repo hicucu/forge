@@ -1,6 +1,6 @@
 ---
 name: preventing-github-actions-loops
-description: Use when authoring, editing, or reviewing GitHub Actions workflows (.github/workflows/*.yml) to prevent or detect infinite-loop / self-triggering cycles — where a workflow's output (a commit/push, a pull request, an issue comment, a tag/release, or a dispatch) re-triggers a workflow (action A triggers action B triggers action A). Triggers include creating a CI/CD workflow that pushes commits or opens PRs, "워크플로우 만들기/작성", "워크플로우 점검", "무한루프 방지", "순환 트리거 확인", "audit workflows", "recursive workflow", "workflow_run loop".
+description: GitHub Actions 워크플로우(.github/workflows/*.yml)를 작성·편집·검토하여 무한 루프 / 자기 트리거 사이클을 방지하거나 탐지할 때 사용 — 워크플로우의 출력(커밋/푸시, 풀 리퀘스트, 이슈 코멘트, 태그/릴리스, dispatch)이 다른 워크플로우를 재트리거하는 경우(액션 A가 B를, B가 다시 A를 트리거). 트리거: 커밋을 푸시하거나 PR을 여는 CI/CD 워크플로우 작성, "워크플로우 만들기/작성", "워크플로우 점검", "무한루프 방지", "순환 트리거 확인", "audit workflows", "recursive workflow", "workflow_run loop".
 ---
 
 # GitHub Actions 무한루프 방지·점검

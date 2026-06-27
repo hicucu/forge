@@ -1,6 +1,6 @@
 ---
 name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+description: 작성된 구현 플랜을 검토 체크포인트와 함께 별도 세션에서 실행할 때 사용
 ---
 
 # 플랜 실행
