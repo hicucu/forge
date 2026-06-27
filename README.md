@@ -45,13 +45,14 @@
 - **docs-suite** (10개): CLAUDE.md 지침 생성(`generate-claude-instructions`)과 diff 기반 문서 동기화(`sync-docs-from-diff`) 전담
 - **오케스트레이터 패턴**: 복잡도 판단 후 적절한 전문 에이전트로 위임
 - **세션 인계 문서** (`HANDOFF.md`): FULL 경로 구현 중 spec/phase 완료 시 진행 맥락을 서술형으로 기록 — 컨텍스트가 끊겨도 다음 세션·에이전트가 이어받음 (task 단위는 체크박스로만 추적)
+- **작업 목표 추적** (`GOAL.md`): SIMPLE·DEBUG 경로 진입 시 목표·성공 기준을 기록하는 소프트 게이트 — 완료 검증 시 성공 기준과 대조하여 목표를 완료 게이트로 작동 (FULL은 design.md가 담당)
 
 ## 요청 분류 및 처리 경로
 
 | 경로       | 조건                       | 파이프라인                                  |
 | ---------- | -------------------------- | ------------------------------------------- |
-| **DEBUG**  | 버그·에러·예상치 못한 동작 | systematic-debugging → verification         |
-| **SIMPLE** | 파일 1-2개, 10분 이내      | TDD → verification                          |
+| **DEBUG**  | 버그·에러·예상치 못한 동작 | GOAL.md → systematic-debugging → verification |
+| **SIMPLE** | 파일 1-2개, 10분 이내      | GOAL.md → TDD → verification                 |
 | **FULL**   | 신규 기능, 복잡한 변경     | brainstorming → planning → 병렬 개발 → 리뷰 |
 
 ## 플러그인 구조
