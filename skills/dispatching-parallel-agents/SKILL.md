@@ -1,6 +1,6 @@
 ---
 name: dispatching-parallel-agents
-description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
+description: 공유 상태나 순차 의존성 없이 진행 가능한 독립 작업이 2개 이상일 때 사용
 ---
 
 # 병렬 에이전트 디스패치

@@ -1,6 +1,6 @@
 ---
 name: using-forge
-description: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions
+description: 모든 대화 시작 시 사용 - 스킬을 찾고 사용하는 방법을 확립하며, 명확화 질문을 포함한 모든 응답 전에 Skill 도구 호출을 요구
 ---
 
 <SUBAGENT-STOP>

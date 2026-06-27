@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: Use when creating new skills, editing existing skills, or verifying skills work before deployment
+description: 새 스킬 생성·기존 스킬 편집·배포 전 스킬 검증 시 사용
 ---
 
 # 스킬 작성

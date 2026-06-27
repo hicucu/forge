@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: 모든 기능 또는 버그 수정 구현 시, 구현 코드를 작성하기 전에 사용
 ---
 
 # 테스트 주도 개발 (TDD)
