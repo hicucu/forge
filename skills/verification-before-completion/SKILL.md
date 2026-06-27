@@ -37,6 +37,8 @@ description: Use when about to claim work is complete, fixed, or passing, before
 단계를 건너뛰는 것 = 검증이 아닌 거짓말
 ```
 
+**GOAL.md가 있으면:** 위 게이트 함수를 GOAL.md의 각 성공 기준 항목에도 동일하게 적용한다. 항목마다 증거로 대조하여 전부 충족됐을 때만 "목표 달성"을 주장한다. (GOAL.md가 없으면 이 단계는 건너뛴다.)
+
 ## 흔한 실패
 
 | 주장             | 요건                        | 불충분한 것                 |
