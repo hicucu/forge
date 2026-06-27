@@ -48,6 +48,7 @@ description: Use when about to claim work is complete, fixed, or passing, before
 | 회귀 테스트 작동 | RED-GREEN 사이클 검증     | 테스트 한 번 통과           |
 | 에이전트 완료    | VCS diff가 변경 사항 표시 | 에이전트가 "성공" 보고      |
 | 요구사항 충족    | 항목별 체크리스트         | 테스트 통과                 |
+| 목표 달성        | GOAL.md 성공 기준 전부 충족 | 일부만 충족, 추정           |
 
 ## 위험 신호 - 멈춰라
 
@@ -133,6 +134,7 @@ description: Use when about to claim work is complete, fixed, or passing, before
 
 **규칙 적용 대상:**
 
+- GOAL.md가 있으면, 완료 주장 전 그 성공 기준 항목을 실제 증거로 하나씩 대조
 - 정확한 문구
 - 바꿔 말하기 및 동의어
 - 성공의 암시
