@@ -107,7 +107,7 @@ GOAL.md 포맷:
 
 **단순 경로:**
 
-1. **GOAL.md 작성** — 목표·성공 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (사소한 작업은 생략 가능, 소프트 게이트)
+1. **GOAL.md 작성** — 목표·성공 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (결과가 자명한 작업만 생략, 소프트 게이트)
 2. `forge:test-driven-development` — RED-GREEN-REFACTOR 사이클로 직접 구현
 3. `forge:verification-before-completion` — 완료 전 실제 동작 검증 (GOAL.md 성공 기준 대조 포함)
 
@@ -196,7 +196,7 @@ Phase별 실행 상세:
 
 **디버깅 경로:**
 
-1. **GOAL.md 작성** — 버그 증상·수정 완료 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (사소한 작업은 생략 가능, 소프트 게이트)
+1. **GOAL.md 작성** — 버그 증상·수정 완료 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (결과가 자명한 작업만 생략, 소프트 게이트)
 2. `forge:systematic-debugging` — 근본 원인 4단계 분석
 3. `forge:verification-before-completion` — 수정 검증 (GOAL.md 성공 기준 대조 포함)
 
