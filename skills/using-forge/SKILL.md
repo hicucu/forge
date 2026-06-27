@@ -82,12 +82,34 @@ digraph request_dispatch {
 - 요구사항 모호 또는 접근법 선택 필요
 - 외부 의존성 추가
 
+### 작업 목표 추적 (GOAL.md 소프트 게이트)
+
+SIMPLE·DEBUG 경로 진입 직후, 작업의 목표와 성공 기준(디버깅 경로의 경우 버그 증상·수정 완료 기준)을 `_workspaces/{branch-slug}/GOAL.md`에 기록합니다. 목표(왜/완료 기준)와 TodoWrite(지금 무엇을)의 역할을 분리합니다.
+
+**소프트 게이트**: 작성이 기본이며 생략은 예외입니다. 결과가 자명하고 별도 검증이 불필요한 작업(예: 오타 수정)만 생략을 허용합니다 — 분량이 적어도 동작·결과가 바뀌는 수정(예: 한 줄짜리 버그 수정)은 작성합니다. 착수 자체를 막는 하드 게이트는 아닙니다.
+
+**FULL 경로는 제외**: `design.md`가 이미 목표와 성공 기준을 담으므로 GOAL.md를 따로 만들지 않습니다.
+
+GOAL.md 포맷:
+
+```markdown
+# 목표
+<무엇을·왜, 1~3줄>
+
+## 성공 기준
+- [ ] <체크 가능한 완료 조건>
+
+## 상태
+<진행 한 줄 — 선택>
+```
+
 ### 파이프라인별 실행 시퀀스
 
 **단순 경로:**
 
-1. `forge:test-driven-development` — RED-GREEN-REFACTOR 사이클로 직접 구현
-2. `forge:verification-before-completion` — 완료 전 실제 동작 검증
+1. **GOAL.md 작성** — 목표·성공 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (결과가 자명하고 별도 검증이 불필요한 작업만 생략, 소프트 게이트)
+2. `forge:test-driven-development` — RED-GREEN-REFACTOR 사이클로 직접 구현
+3. `forge:verification-before-completion` — 완료 전 실제 동작 검증 (GOAL.md 성공 기준 대조 포함)
 
 **복잡 경로 (subagent 파이프라인):**
 
@@ -174,8 +196,9 @@ Phase별 실행 상세:
 
 **디버깅 경로:**
 
-1. `forge:systematic-debugging` — 근본 원인 4단계 분석
-2. `forge:verification-before-completion` — 수정 검증
+1. **GOAL.md 작성** — 버그 증상·수정 완료 기준을 `_workspaces/{branch-slug}/GOAL.md`에 기록 (결과가 자명하고 별도 검증이 불필요한 작업만 생략, 소프트 게이트)
+2. `forge:systematic-debugging` — 근본 원인 4단계 분석
+3. `forge:verification-before-completion` — 수정 검증 (GOAL.md 성공 기준 대조 포함)
 
 ---
 
