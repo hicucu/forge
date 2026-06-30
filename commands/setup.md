@@ -30,8 +30,8 @@ ls ~/.claude/plugins/cache/hicucu/forge/
   "hooks": [
     {
       "type": "command",
-      "command": "<PLUGIN_ROOT>\\hooks\\run-hook.cmd",
-      "args": ["session-start"],
+      "command": "node",
+      "args": ["<PLUGIN_ROOT>/hooks/run-hook.mjs", "session-start"],
       "timeout": 10
     }
   ]
